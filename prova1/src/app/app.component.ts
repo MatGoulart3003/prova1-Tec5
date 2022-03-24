@@ -1,4 +1,7 @@
+import { Time } from '@angular/common';
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'prova1';
+
+  novoTime: Time = {} as Time
+  timeLista: Time []=[]
+
+  salvaTime(form:NgForm){
+
+    this.timeLista.push(this.novoTime)
+    this.novoTime = {} as Time
+
+    form.resetForm()
+  }
+
+
 }
