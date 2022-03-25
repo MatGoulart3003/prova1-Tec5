@@ -31,9 +31,9 @@
 
       </thead>
       
-      <tbody *ngFor="let time of timeLista">
+      <tbody *ngFor="let time of timeLista; let i = index">
 
-        <td>1</td>
+        <td> {{ i+1 }} </td>
         <td> {{ time.nome }} </td>
         <td> {{ time.pontuacao }} </td>
 

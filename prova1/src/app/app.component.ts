@@ -11,15 +11,16 @@ import { Team } from './team';
 })
 export class AppComponent {
   title = 'prova1';
-
+  cont = 0
   novoTime: Team = {} as Team
   timeLista: Team []=[]
 
   salvaTime(form:NgForm){
-    
     this.timeLista.push(this.novoTime)
+    this.novoTime.colocacao
     this.novoTime = {} as Team
-
+     
+    
     form.resetForm()
   }
 
