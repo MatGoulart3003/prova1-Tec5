@@ -18,7 +18,7 @@
 
   <h2>Classificação:</h2>
 
-  <div *ngFor="let time of timeLista">
+  <div *ngIf="timeLista[0]">
 
     <table>
       <thead>
@@ -31,7 +31,7 @@
 
       </thead>
       
-      <tbody>
+      <tbody *ngFor="let time of timeLista">
 
         <td>1</td>
         <td> {{ time.nome }} </td>
