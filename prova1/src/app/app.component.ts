@@ -11,18 +11,28 @@ import { Team } from './team';
 })
 export class AppComponent {
   title = 'prova1';
-  cont = 0
+  key: string = "pontuacao";
+  reverse: boolean = false;
+
   novoTime: Team = {} as Team
   timeLista: Team []=[]
+  ordemTimesOrdenada = this.timeLista.sort((a,b) => a.pontuacao - b.pontuacao)
 
   salvaTime(form:NgForm){
     this.timeLista.push(this.novoTime)
-    this.novoTime.colocacao
-    this.novoTime = {} as Team
-     
+    this.novoTime = {} as Team    
     
     form.resetForm()
   }
 
+  sort(key: any){
 
+    this.key = key;
+    this.reverse = !this.reverse;
+
+  }
+ 
+ 
 }
+
+

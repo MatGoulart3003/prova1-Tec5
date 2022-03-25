@@ -25,13 +25,14 @@
 
         <tr>
           <th>Classificação:</th>
-          <th>Time:</th>
-          <th>Pontuação</th>
+          <th  (click)="sort('time')">Time:</th>
+          <th  (click)="sort('pontuacao')">Pontuação</th>
         </tr>
 
       </thead>
       
-      <tbody *ngFor="let time of timeLista; let i = index">
+      <tbody *ngFor="let time of timeLista | orderBy: key : reverse; let i = index">
+        
 
         <td> {{ i+1 }} </td>
         <td> {{ time.nome }} </td>
