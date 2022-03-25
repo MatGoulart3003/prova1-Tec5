@@ -1,4 +1,4 @@
-export interface Time{
+export interface Team{
 
     nome:string
     pontuacao:number

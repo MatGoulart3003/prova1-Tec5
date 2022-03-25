@@ -1,15 +1,15 @@
 <h1>Campeonato XYZ</h1>
 
-<form >
+<form #myForm="ngForm" (submit)="salvaTime(myForm)">
 
   <div>
     <label>Nome do Time: </label>
-    <input type="text" name="nome">
+    <input type="text" name="nome" [(ngModel)]="novoTime.nome">
   </div>
 
   <div>
     <label>Pontuação: </label>   
-    <input type="text" name="pontos">
+    <input type="text" name="pontuacao" [(ngModel)]="novoTime.pontuacao">
   </div>
 
   <div>
@@ -17,5 +17,31 @@
   </div>
 
   <h2>Classificação:</h2>
+
+  <div *ngFor="let time of timeLista">
+
+    <table>
+      <thead>
+
+        <tr>
+          <th>Classificação:</th>
+          <th>Time:</th>
+          <th>Pontuação</th>
+        </tr>
+
+      </thead>
+      
+      <tbody>
+
+        <td>1</td>
+        <td> {{ time.nome }} </td>
+        <td> {{ time.pontuacao }} </td>
+
+      </tbody>
+
+
+    </table>
+
+  </div>
   
 </form>

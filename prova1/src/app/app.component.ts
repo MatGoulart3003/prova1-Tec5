@@ -1,6 +1,7 @@
-import { Time } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Team } from './team';
 
 
 @Component({
@@ -11,13 +12,13 @@ import { NgForm } from '@angular/forms';
 export class AppComponent {
   title = 'prova1';
 
-  novoTime: Time = {} as Time
-  timeLista: Time []=[]
+  novoTime: Team = {} as Team
+  timeLista: Team []=[]
 
   salvaTime(form:NgForm){
-
+    
     this.timeLista.push(this.novoTime)
-    this.novoTime = {} as Time
+    this.novoTime = {} as Team
 
     form.resetForm()
   }
