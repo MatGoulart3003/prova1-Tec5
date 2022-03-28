@@ -32,18 +32,17 @@
 
       </thead>
       
-      <tbody *ngFor="let time of timeLista | orderBy: key : reverse; let i = index" >
-        
+      <tbody>
 
-        <td> {{ i+1 }} </td>
-        <td> {{ time.nome }} </td>
-        <td> {{ time.pontuacao }} </td>
-
+        <tr *ngFor="let time of timeLista; let i = index"> 
+          <td> {{ i+1 }} </td>
+          <td> {{ time.nome }} </td>
+          <td> {{ time.pontuacao }} </td>
+          
+        </tr>
       </tbody>
-  
-      
 
-    </table>
+  </table>
 
   </div>
   

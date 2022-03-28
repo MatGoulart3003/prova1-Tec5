@@ -20,18 +20,13 @@ export class AppComponent {
 
   salvaTime(form:NgForm){
     this.timeLista.push(this.novoTime)
+    this.timeLista.sort(this.sortTeam)
     this.novoTime = {} as Team    
     
     form.resetForm()
   }
 
-  sort(key: any){
-
-    this.key = key;
-    this.reverse = !this.reverse;
-
-  }
- 
+  sortTeam = (a:Team,b: Team) => b.pontuacao - a.pontuacao
  
 }
 
